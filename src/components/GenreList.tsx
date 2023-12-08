@@ -10,8 +10,9 @@ import useGenre, { Genre } from "../hooks/useGenre";
 
 interface GenreListProps {
   onSelectGenre: (genere: Genre) => void;
+  selectedGenre: Genre | null;
 }
-const GenreList = ({ onSelectGenre }: GenreListProps) => {
+const GenreList = ({ onSelectGenre, selectedGenre }: GenreListProps) => {
   // const { genres } = useGenre();
   // return (
   //   <ul>
@@ -36,6 +37,8 @@ const GenreList = ({ onSelectGenre }: GenreListProps) => {
             />
             <Button
               fontSize="lg"
+              fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+              colorScheme={genre.id === selectedGenre?.id ? "green" : ""}
               variant="link"
               onClick={() => onSelectGenre(genre)}
             >
