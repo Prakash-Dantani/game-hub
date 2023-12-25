@@ -11,9 +11,9 @@ import useGenre, { Genre } from "../hooks/useGenre";
 
 interface GenreListProps {
   onSelectGenre: (genere: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
-const GenreList = ({ onSelectGenre, selectedGenre }: GenreListProps) => {
+const GenreList = ({ onSelectGenre, selectedGenreId }: GenreListProps) => {
   const { data, isLoading, error } = useGenre();
   if (error) return null;
   if (isLoading) return <Spinner />;
@@ -36,8 +36,8 @@ const GenreList = ({ onSelectGenre, selectedGenre }: GenreListProps) => {
                 fontSize="lg"
                 whiteSpace="normal"
                 textAlign="left"
-                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
-                colorScheme={genre.id === selectedGenre?.id ? "green" : ""}
+                fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
+                colorScheme={genre.id === selectedGenreId ? "green" : ""}
                 variant="link"
                 onClick={() => onSelectGenre(genre)}
               >
