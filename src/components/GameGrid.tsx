@@ -29,15 +29,17 @@ const GameGrid = () => {
         }
       >
         <SimpleGrid
-          columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+          columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
           spacing={6}
-          padding={10}
+          padding={5}
         >
           {isLoading &&
             skelotons.map((skeloton) => (
-              <GameCardContainer key={skeloton}>
-                <GameCardSkeloton />
-              </GameCardContainer>
+              <React.Fragment key={skeloton}>
+                <GameCardContainer key={skeloton}>
+                  <GameCardSkeloton />
+                </GameCardContainer>
+              </React.Fragment>
             ))}
           {data?.pages.map((page, index) => (
             <React.Fragment key={index}>

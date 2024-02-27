@@ -5,6 +5,7 @@ import GenreList from "./components/GenreList";
 import PlatformSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
+import Demo from "./components/Demo";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <GridItem area="main">
         <Box paddingLeft={5}>
           <GameHeading />
+          <Demo name="PRakash Dantani" />
           <HStack spacing={5} marginBottom={5}>
             <PlatformSelector />
             <SortSelector />
