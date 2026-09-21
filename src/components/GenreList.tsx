@@ -6,6 +6,8 @@ import {
   List,
   ListItem,
   Spinner,
+  Text,
+  Box,
 } from "@chakra-ui/react";
 import useGenre from "../hooks/useGenre";
 import useGameQueryStore from "../hooks/store";
@@ -49,6 +51,19 @@ const GenreList = () => {
           </ListItem>
         ))}
       </List>
+      <Box
+        textAlign="center"
+        borderTop="1px solid"
+        borderColor="gray.700"
+        pt={4}
+      >
+        <Text fontSize="xs" color="gray.500" textAlign="center">
+          © {new Date().getFullYear()} | Crafted with ❤️ by{" "}
+          <Text as="span" fontWeight="semibold" color="blue.300">
+            Prakash Dantani
+          </Text>
+        </Text>
+      </Box>
     </>
   );
 };
